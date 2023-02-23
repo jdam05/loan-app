@@ -1,0 +1,27 @@
+<!--
+    Title: app.component.html.
+    Author: Jamal Eddine Damir
+    Date: February 21, 2023
+    Description: app.component.html file
+    Sources:
+            * Source code from class GitHub Repository
+            * W3Schools.com
+            * Instructor provided assignment specific instructions
+-->
+
+<mat-toolbar class="toolbar" color="accent">
+  <mat-toolbar-row>
+    <div class="logo">
+      <h1>Loan App</h1>
+    </div>
+    <div style="width: 80%">
+      <!-- Main Navigation -->
+      <div fxLayout="row wrap" fxLayoutAlign="end start">
+        <button mat-button routerLink="/">Home</button>
+        <button mat-button routerLink="/contact">Contact Us</button>
+        <button mat-button routerLink="/about">About Us</button>
+      </div>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>

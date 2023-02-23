@@ -1,0 +1,68 @@
+<!--
+    Title: home.component.html.
+    Author: Jamal Eddine Damir
+    Date: February 21, 2023
+    Description: home.component.html file
+    Sources:
+            * Source code from class GitHub Repository
+            * W3Schools.com
+            * Instructor provided assignment specific instructions
+-->
+<div fxLayout="column" class="blue">
+  <h1 class="yellow">{{ title }}</h1>
+  <div class="loan-form" fxFlex>
+    <mat-card class="mat-elevation-z8">
+      <mat-card-content class="light-blue">
+        <form
+          [formGroup]="loanForm"
+          (ngSubmit)="onSubmit($event); loanForm.reset()"
+          fxLayout="column"
+          fxLayoutGap="16px"
+        >
+          <mat-form-field fxFlex appearance="fill">
+            <mat-label>Loan Amount</mat-label>
+            <input
+              type="text"
+              name="txtLoanAmount"
+              required
+              id="txtLoanAmount"
+              matInput
+              formControlName="loanAmount"
+            />
+          </mat-form-field>
+          <mat-form-field fxFlex appearance="fill">
+            <mat-label>Interest</mat-label>
+            <input
+              type="text"
+              name="txtInterest"
+              required
+              id="txtInterest"
+              matInput
+              formControlName="interest"
+            />
+          </mat-form-field>
+          <mat-form-field fxFlex appearance="fill">
+            <mat-label>Number of Years</mat-label>
+            <input
+              type="text"
+              name="txtNumOfYears"
+              required
+              id="txtNumOfYears"
+              matInput
+              formControlName="numberOfYears"
+            />
+          </mat-form-field>
+          <button
+            type="submit"
+            mat-raised-button
+            [disabled]="!loanForm.valid"
+            color="accent"
+            (click)="calculateLoan()"
+          >
+            Calculate
+          </button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
