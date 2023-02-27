@@ -1,5 +1,29 @@
+/*
+ * Title: App.component.scss
+ * Date: February 24, 2023
+ * Author: Jamal Eddine Damir
+ * Description: Loan-app styles
+ * Sources:
+ * Source code from class GitHub Repository
+ * Instructor provided assignment specific instructions
+ */
+
 @import url("https://fonts.googleapis.com/css2?family=Carter+One&display=swap");
 
 h1 {
-  font-family: "Carter One", cursive;
+	font-family: "Carter One", cursive;
+	text-shadow: 1px 8px 8px rgba(6, 5, 1, 0.6);
+}
+.button {
+	font-family: "Carter One", cursive;
+	font-size: 18px;
+	text-shadow: 1px 8px 8px rgba(6, 5, 1, 0.6);
+}
+
+.footer {
+	background-color: #fbbf2c;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
 }

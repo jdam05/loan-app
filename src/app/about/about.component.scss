@@ -1,0 +1,30 @@
+/*
+ * Title: about.component.scss
+ * Date: February 24, 2023
+ * Author: Jamal Eddine Damir
+ * Description: loan-app about component styles
+ * Sources:
+ * Source code from class GitHub Repository
+ * Instructor provided assignment specific instructions
+ */
+@import url("https://fonts.googleapis.com/css2?family=Carter+One&family=Kanit:wght@300&display=swap");
+
+h1 {
+	margin-left: 20px;
+	font-family: "Carter One", cursive;
+	text-shadow: 1px 8px 8px rgba(6, 5, 1, 0.6);
+}
+
+p {
+	font-family: "Kanit", sans-serif;
+	line-height: 40px;
+	text-align: justify;
+	color: #faf2e4;
+	font-size: 25px;
+	margin-top: 0px;
+}
+.about {
+	width: 95%;
+	margin: 10px auto;
+	background-color: #3c6fb2;
+}

@@ -1,0 +1,39 @@
+/*
+ * Title: contact.component.scss
+ * Date: February 24, 2023
+ * Author: Jamal Eddine Damir
+ * Description: loan-app contact component styles
+ * Sources:
+ * Source code from class GitHub Repository
+ * Instructor provided assignment specific instructions
+ */
+
+h1 {
+	margin-left: 20px;
+	font-family: "Carter One", cursive;
+	text-align: center;
+	text-shadow: 1px 8px 8px rgba(6, 5, 1, 0.6);
+}
+
+p {
+	font-family: "Kanit", sans-serif;
+	line-height: 50px;
+	text-align: center;
+	color: #faf2e4;
+	font-size: 25px;
+	margin-top: 0px;
+	text-shadow: 1px 8px 8px rgba(6, 5, 1, 0.6);
+}
+
+i {
+	color: black;
+	font-size: 50px;
+	text-shadow: 1px 8px 14px rgba(255, 255, 255, 0.6);
+}
+.contact {
+	width: 30%;
+	margin: 10px auto;
+	background-color: #3c6fb2;
+	text-align: center;
+	text-shadow: 3px 8px 8px rgba(6, 5, 1, 0.6);
+}

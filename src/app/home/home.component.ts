@@ -1,42 +1,98 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+/**
+ * Title: home.component.ts
+ * Date: February 24, 2023
+ * Author: Jamal Eddine Damir
+ * Description: Home component for loan-app
+ * Sources:
+ * Source code from class GitHub Repository
+ * Instructor provided assignment specific instructions
+ */
+
+// Import Component object
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+	selector: "app-home",
+	templateUrl: "./home.component.html",
+	styleUrls: ["./home.component.scss"],
 })
 export class HomeComponent implements OnInit {
-  title = 'Welcome to the Loan Calculating Application!';
+	title: string = "Welcome to the Loan Calculating Application!";
+	resultTitle: string = "Your Loan Results:";
+	loanAmountPlaceHolder = "Loan Amount";
+	visibleForm: boolean = true;
+	visibleResults: boolean = false;
+	visibleGreeting: boolean = true;
+	visibleResultsH1: boolean = false;
+	monthlyPayment: number = 0;
+	totalInterest: number = 0;
 
-  loanForm: FormGroup = new FormGroup({});
+	loanForm: FormGroup = new FormGroup({});
 
-  constructor(private fb: FormBuilder) {}
+	constructor(private fb: FormBuilder) {}
 
-  ngOnInit(): void {
-    this.loanForm = this.fb.group({
-      loanAmount: ['', Validators.required],
-      numberOfYears: ['', Validators.required],
-      interest: ['', Validators.required],
-    });
-  }
+	ngOnInit(): void {
+		let decimalRegex = /^(?:\d*\.\d{1,2}|\d+)$/;
+		this.loanForm = this.fb.group({
+			loanAmount: [
+				"",
+				Validators.compose([
+					Validators.required,
+					Validators.pattern("^[0-9]*$"),
+				]),
+			],
+			numberOfYears: [
+				"",
+				Validators.compose([
+					Validators.required,
+					Validators.pattern("^[0-9]*$"),
+				]),
+			],
+			interest: [
+				"",
+				Validators.compose([
+					Validators.required,
+					Validators.pattern(decimalRegex),
+				]),
+			],
+		});
+	}
 
-  get form() {
-    return this.loanForm.controls;
-  }
+	get form() {
+		return this.loanForm.controls;
+	}
 
-  onSubmit(event: any) {}
-  calculateLoan() {
-    const formValues = this.loanForm.value;
-    const loanAmount = formValues.loanAmount;
-    const numberOfYears = formValues.numberOfYears;
-    const interest = formValues.interest;
+	onSubmit(event: any) {}
 
-    const monthlyPayment = 0;
+	// Method that calculates monthly payment and total interest onclick
+	calculateLoan() {
+		this.visibleForm = false;
+		this.visibleResults = true;
+		this.visibleGreeting = false;
+		this.visibleResultsH1 = true;
+		const formValues = this.loanForm.value;
+		const loanAmount: number = formValues.loanAmount;
+		const numberOfYears: number = formValues.numberOfYears;
+		const interest: number = formValues.interest;
+		const numberOfPayments: number = numberOfYears * 12;
+		const monthlyInterest: number = interest / 1200;
 
-    // let monthlyPayment: number = 0;
-    // let totalInterest: number = 0;
+		// Calculating monthly payment
+		this.monthlyPayment =
+			(loanAmount * monthlyInterest) /
+			(1 - (1 + monthlyInterest) ** -numberOfPayments);
 
-    // monthlyPayment = loanAmount * (interest / (numberOfYears * 12))
-  }
+		// Calculating total interest
+		this.totalInterest = this.monthlyPayment * numberOfPayments - loanAmount;
+		console.log(this.monthlyPayment.toFixed(2));
+
+		console.log(formValues);
+	}
+
+	//Back to cleared form
+	backToForm() {
+		this.visibleForm = true;
+		this.visibleResults = false;
+	}
 }

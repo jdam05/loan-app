@@ -1,22 +1,38 @@
-@import url("https://fonts.googleapis.com/css2?family=Carter+One&display=swap");
+/*
+ * Title: home.component.scss
+ * Date: February 24, 2023
+ * Author: Jamal Eddine Damir
+ * Description: loan-app home component styles
+ * Sources:
+ * Source code from class GitHub Repository
+ * Instructor provided assignment specific instructions
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Carter+One&family=Kanit:wght@300&display=swap");
 
 h1 {
-  text-align: center;
-  margin-top: 5%;
-  font-family: "Carter One", cursive;
+	text-align: center;
+	margin-top: 5%;
+	font-family: "Carter One", cursive;
+	text-shadow: 1px 8px 8px rgba(6, 5, 1, 0.6);
 }
 .loan-form {
-  width: 35%;
-  margin: 50px auto;
+	width: 35%;
+	margin: 50px auto;
+}
+.msg-error {
+	margin: 10px 0px;
+	padding: 12px;
+	color: #d8000c;
+	background-color: #ffd2d2;
 }
 
-.blue {
-  background-color: #1a55a4;
-  height: 100%;
+#back-to-form {
+	background-color: #fbbf2c;
+	box-shadow: 1px 8px 8px rgba(6, 5, 1, 0.6);
+	font-family: "Carter One", cursive;
 }
-.light-blue {
-  background-color: #3c6fb2;
-}
-.yellow {
-  color: #fbbf2c;
+
+.results {
+	text-align: center;
 }
