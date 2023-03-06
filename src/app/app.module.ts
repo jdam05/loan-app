@@ -1,3 +1,14 @@
+/**
+ * Title: app.module.ts
+ * Date: March 1, 2023
+ * Author: Jamal Eddine Damir
+ * Description:  App module
+ * Sources:
+ * Source code from class GitHub Repository
+ * Instructor provided assignment specific instructions
+ */
+
+// Importing modules and components
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 
@@ -38,3 +49,4 @@ import { MatSidenavModule } from "@angular/material/sidenav";
 	bootstrap: [AppComponent],
 })
 export class AppModule {}
+
